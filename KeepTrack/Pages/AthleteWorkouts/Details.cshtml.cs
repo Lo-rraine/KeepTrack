@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using KeepTrack.Data;
 using KeepTrack.Models;
 
-namespace KeepTrack.Pages.Athletes
+namespace KeepTrack.Pages.AthleteWorkouts
 {
     public class DetailsModel : PageModel
     {
@@ -19,27 +19,24 @@ namespace KeepTrack.Pages.Athletes
             _context = context;
         }
 
-      public Athlete Athlete { get; set; }
+      public AthleteWorkout AthleteWorkout { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Athletes == null)
+            if (id == null || _context.AthleteWorkouts == null)
             {
                 return NotFound();
             }
 
-            
-            Athlete = await _context.Athletes
-                .Include( a=> a.AthleteWorkouts)
-                .ThenInclude(aw => aw.Workout)
-                .AsNoTracking()
-                .FirstOrDefaultAsync(m => m.ID == id);
-
-            if (Athlete == null)
+            var athleteworkout = await _context.AthleteWorkouts.FirstOrDefaultAsync(m => m.WorkoutId == id);
+            if (athleteworkout == null)
             {
                 return NotFound();
             }
-           
+            else 
+            {
+                AthleteWorkout = athleteworkout;
+            }
             return Page();
         }
     }
