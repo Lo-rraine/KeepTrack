@@ -28,18 +28,15 @@ namespace KeepTrack.Pages.Athletes
                 return NotFound();
             }
 
-            
-            Athlete = await _context.Athletes
-                .Include( a=> a.AthleteWorkouts)
-                .ThenInclude(aw => aw.Workout)
-                .AsNoTracking()
-                .FirstOrDefaultAsync(m => m.ID == id);
-
-            if (Athlete == null)
+            var athlete = await _context.Athletes.FirstOrDefaultAsync(m => m.ID == id);
+            if (athlete == null)
             {
                 return NotFound();
             }
-           
+            else 
+            {
+                Athlete = athlete;
+            }
             return Page();
         }
     }

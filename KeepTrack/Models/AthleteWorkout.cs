@@ -7,5 +7,7 @@
         public Athlete Athlete { get; set; }
         public int WorkoutId { get; set; }
         public Workout Workout { get; set; }
+        public int PersonalTrainerId { get; set; }
+        public PersonalTrainer PersonalTrainer { get; set; }
     }
 }

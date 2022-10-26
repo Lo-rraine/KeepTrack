@@ -24,16 +24,10 @@
             @Html.DisplayFor(model => model.Athlete.Surname)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Athlete.Weight)
+            @Html.DisplayNameFor(model => model.Athlete.Gender)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Athlete.Weight)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Athlete.Height)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Athlete.Height)
+            @Html.DisplayFor(model => model.Athlete.Gender)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Athlete.StartDate)
@@ -41,30 +35,9 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Athlete.StartDate)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Athlete.AthleteWorkouts)
-        </dt>
-        <dd class="col-sm-10">
-            <table class="table">
-                <tr>
-                    <th>Workout Title</th>
-                    <th>Personal Trainer</th>
-                </tr>
-                @foreach (var item in Model.Athlete.AthleteWorkouts)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Workout.Title)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Workout.PersonalTrainer.Name)
-                        </td>
-                    </tr>
-                }
-            </table>
-        </dd>
     </dl>
 </div>
+
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Athlete?.ID">Edit</a> |
     <a asp-page="./Index">Back to List</a>

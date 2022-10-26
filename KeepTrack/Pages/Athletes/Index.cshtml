@@ -1,6 +1,8 @@
 ﻿@page
 @model KeepTrack.Pages.Athletes.IndexModel
 
+
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -11,7 +13,7 @@
     <a asp-page="Create">Create New</a>
 </p>
 <table class="table">
-    <thead>
+    <thead class="">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Athlete[0].Name)
@@ -20,10 +22,7 @@
                 @Html.DisplayNameFor(model => model.Athlete[0].Surname)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Athlete[0].Weight)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Athlete[0].Height)
+                @Html.DisplayNameFor(model => model.Athlete[0].Gender)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Athlete[0].StartDate)
@@ -41,10 +40,7 @@
                 @Html.DisplayFor(modelItem => item.Surname)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Weight)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Height)
+                @Html.DisplayFor(modelItem => item.Gender)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.StartDate)
@@ -58,3 +54,9 @@
 }
     </tbody>
 </table>
+
+
+
+
+
+

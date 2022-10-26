@@ -37,6 +37,7 @@ namespace KeepTrack.Pages.AthleteWorkouts
             }
             AthleteWorkout = athleteworkout;
            ViewData["AthleteId"] = new SelectList(_context.Athletes, "ID", "ID");
+           ViewData["PersonalTrainerId"] = new SelectList(_context.PersonalTrainers, "Id", "Id");
            ViewData["WorkoutId"] = new SelectList(_context.Workouts, "Id", "Id");
             return Page();
         }

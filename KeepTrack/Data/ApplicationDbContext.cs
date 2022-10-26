@@ -31,6 +31,11 @@ namespace KeepTrack.Data
                 .HasOne(aw => aw.Workout)
                 .WithMany(a => a.AthleteWorkouts)
                 .HasForeignKey(aw => aw.WorkoutId);
+
+            modelBuilder.Entity<AthleteWorkout>()
+                .HasOne(pt => pt.PersonalTrainer)
+                .WithMany(a => a.AthleteWorkouts)
+                .HasForeignKey(pt => pt.PersonalTrainerId);
         }
     }
 }

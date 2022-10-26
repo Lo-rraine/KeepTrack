@@ -27,6 +27,7 @@ namespace KeepTrack.Pages.AthleteWorkouts
             {
                 AthleteWorkout = await _context.AthleteWorkouts
                 .Include(a => a.Athlete)
+                .Include(a => a.PersonalTrainer)
                 .Include(a => a.Workout).ToListAsync();
             }
         }

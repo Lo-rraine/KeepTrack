@@ -6,6 +6,7 @@
         public string Name { get; set; }
         public string Surname { get; set; }
         public ICollection<Workout> Workouts { get; set; }
+        public ICollection<AthleteWorkout> AthleteWorkouts { get; set; }
 
     }
 }

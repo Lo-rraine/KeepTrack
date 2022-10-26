@@ -22,6 +22,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.AthleteWorkout[0].Workout)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AthleteWorkout[0].PersonalTrainer)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -32,11 +35,13 @@
                 @Html.DisplayFor(modelItem => item.ID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Athlete.Name)
+                @Html.DisplayFor(modelItem => item.Athlete.ID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Workout.Title)
-
+                @Html.DisplayFor(modelItem => item.Workout.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PersonalTrainer.Id)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
