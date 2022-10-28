@@ -9,9 +9,15 @@
 
 <section header>
     <div class="section-title-one">
-        <div class="container">
-            <div class="row table-heading">
-                <div class="col-lg-12">
+        <div class="">
+            <div class="table-heading">
+                <div class="nav-buttons">
+                    <button class="nav-button current"><i class="bi bi-universal-access icons"></i>ATHLETES</button>
+                    <button class="nav-button"><i class="bi bi-person-workspace icons"></i>TRAINERS</button>
+                    <button class="nav-button"><i class="bi bi-lungs icons"></i>WORKOUTS</button>
+                    <button class="nav-button"><i class="bi bi-clipboard-data icons"></i></i>ALL RECORDS</button>
+                </div>
+                <div class="table-info">
                     <div class="text-center">
                         <div class="content">
                             <h2 class="fw-bold">Athlete Overview</h2>
@@ -26,7 +32,7 @@
     </div>
 </section>
 
-<section>
+<section">
 <div class="container-table100">
         <div class="wrap-table100">
             <div class="table">
@@ -49,7 +55,7 @@
                 </p>
                     </div>
                 </div>
-                @foreach (var item in Model.Athlete) {
+          @foreach (var item in Model.Athlete) {
                 <div class="row">
                     <div class="cell">
                 @Html.DisplayFor(modelItem => item.Name)
@@ -64,16 +70,20 @@
                     @Html.DisplayFor(modelItem => item.StartDate)
                     </div>
                     <div class="cell">
-                    <a asp-page="./Edit" asp-route-id="@item.ID"><i class="bi bi-pencil-fill"></i></a>
+                    <a  asp-page="./Edit" asp-route-id="@item.ID"><i class="bi bi-pencil-fill"></i></a>
                     <a asp-page="./Details" asp-route-id="@item.ID"><i class="bi bi-search"></i></a>
                      <a asp-page="./Delete" asp-route-id="@item.ID"><i class="bi bi-trash3-fill"></i></a>
                     </div>
 
                 </div>
-                }
+
+
+          }
             </div>
         </div>
 </div>
+
+  
 </section>
     
 
